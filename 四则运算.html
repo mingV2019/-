@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x,y,z;
+    x=parseInt(prompt("请输入一个正整数x=",""));
+    y=parseInt(prompt("请输入一个正整数y=",""));
+    op=prompt("请输入一个操作符(+，-，*，/)：","");
+    switch (op)
+    {
+        case '+':
+            z=x+y;
+            break;
+        case '-':
+            z=x-y;
+            break;
+        case '*':
+            z=x*y;
+            break;
+        case '/':
+            z=x/y;
+            break;
+    }
+    alert("the result is:"+z);
+</script>
+
+</body>
+</html>
