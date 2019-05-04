@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>购买数量</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="iphone in Ip_Json">
+            <td>{{ iphone.id }}</td>
+            <td>{{ iphone.name }}</td>
+            <td>{{ iphone.price }}</td>
+            <td>
+                <button v-bind:disabled="iphone.count === 0" v-on:click="iphone.count-=1">-</button>
+                {{ iphone.count }}
+                <button v-on:click="iphone.count+=1">+</button>
+            </td>
+            <td>
+                <button v-on:click="iphone.count=0">移除</button>
+            </td>
+        </tr>
+    </table>
+    总价：${{totalPrice()}}
+</div>
+<script src="vuejs.js"></script>
+
+</body>
+</html>
